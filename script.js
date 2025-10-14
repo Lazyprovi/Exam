@@ -403,12 +403,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (resumeImage) {
         resumeImage.addEventListener('click', function() {
             if (resumeZoomLevel <= 1) {
-                // If zoomed out, zoom to readable level
+               
                 resumeZoomLevel = 1.5;
                 resumeImage.style.transform = `scale(${resumeZoomLevel})`;
                 resumeImage.classList.add('zoomed');
             } else {
-                // If zoomed in, reset to default zoomed out view
+              
                 resumeZoomLevel = 0.7;
                 resumeImage.style.transform = `scale(${resumeZoomLevel})`;
                 resumeImage.classList.remove('zoomed');
@@ -453,17 +453,17 @@ document.addEventListener('DOMContentLoaded', function() {
         resumeImage.addEventListener('wheel', function(e) {
             e.preventDefault();
             if (e.deltaY < 0) {
-                // Scroll up - zoom in
+                
                 zoomInResume();
             } else {
-                // Scroll down - zoom out
+                
                 zoomOutResume();
             }
         });
     }
 });
 
-// Mobile menu functionality
+// Mobile menu func
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileNav = document.getElementById('mobileNav');
 const mobileOverlay = document.getElementById('mobileMenuOverlay');
@@ -503,7 +503,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Close menu when window is resized to desktop size
+// Close menu resize
 window.addEventListener('resize', () => {
     if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
         closeMobileMenu();

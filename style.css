@@ -1027,3 +1027,32 @@ header {
         color: #000;
     }
 }
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--muted);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.social-icon:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+    background: rgba(58, 134, 255, 0.1);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+}

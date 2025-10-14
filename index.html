@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keith Fuentes - Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="night">
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+  </div>
+    <header>
+    <div class="brand">
+        <div class="logo" aria-hidden></div>
+        <div>
+            <div style="font-weight:600">Keith Fuentes</div>
+            <div class="muted" style="font-size:12px">Student / Web Developer</div>
+        </div>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Resume</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#lab">Lab</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <div class="brand">
+            <div class="logo" aria-hidden></div>
+            <div>
+                <div style="font-weight:600">Keith Fuentes</div>
+                <div class="muted" style="font-size:12px">Student / Web Developer</div>
+            </div>
+        </div>
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+        <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">Resume</a>
+        <a href="#experience" class="mobile-nav-link" onclick="closeMobileMenu()">Experience</a>
+        <a href="#projects" class="mobile-nav-link" onclick="closeMobileMenu()">Projects</a>
+        <a href="#lab" class="mobile-nav-link" onclick="closeMobileMenu()">Lab</a>
+        <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+    </div>
+</nav>
+
+        <main>
+            <section id="home" class="hero" aria-label="Introduction">
+                <div class="section-frame">
+                <!-- Avatar placed above the intro -->
+                <aside class="avatar" tabindex="0" aria-hidden="false">
+                    <img src="Photos/pfp.jpg" alt="Keith Fuentes">
+                </aside>
+                <div class="intro">
+                    <h1>Hi, I'm <span style="color:var(--accent);">Keith Fuentes</span></h1>
+                    <p class="lead">A passionate IT student with hands-on experience in software and hardware development. This portfolio showcases my projects and laboratory activities.</p>
+                    <p class="muted">Currently: ICT Graduate — Barayong National High School</p>
+                    <p style="margin-top:16px">
+                        <a class="cta" href="#projects">View Projects</a>
+                        <a class="btn secondary" href="#contact" style="margin-left:10px">Contact</a>
+                    </p>
+                </div>
+            </section>
+
+            <section id="about" aria-label="Resume">
+                <div class="section-frame">
+                    <div class="section-title">
+                        <h2>Resume / CV</h2>
+                        <div>
+                            <button class="btn" onclick="openResumeModal()">View Resume</button>
+                        </div>
+                    </div>
+
+                    <div class="cards" style="margin-top:16px">
+                        <div class="card">
+                            <h3>Contact</h3>
+                            <p class="muted">Email: <strong>keithfuentes717@gmail.com</strong><br>Phone: <strong>09776059070</strong></p>
+                            <p class="muted">Links: <a href="https://github.com/Lazyprovi" target="_blank">GitHub</a></p>
+                        </div>
+                        <div class="card">
+                            <h3>Skills</h3>
+                            <p class="muted">Java • C# • HTML • CSS • JavaScript • Python</p>
+                            <p class="muted">Technical Support • Troubleshooting • Customer Service</p>
+                        </div>
+                    </div>
+
+                    <div class="cards" style="margin-top:18px">
+                        <div class="card">
+                            <h3>About Me</h3>
+                            <p class="muted">Passionate IT student with hands-on experience in both software and hardware development. Skilled in coding and troubleshooting, with a strong drive to create innovative solutions and continuously expand technical expertise.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Education</h3>
+                            <p class="muted">ICT Graduate — Barayong National High School (2023-2024)</p>
+                            <p class="muted">Graduated with Honors in Information and Communications Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="cards" style="margin-top:18px">
+                        <div class="card">
+                            <h3>Achievements</h3>
+                            <p class="muted">• Graduated with Honors in Information and Communications Technology (ICT) Strand, Senior High School</p>
+                            <p class="muted">• Member, Student Government ICT Committee</p>
+                        </div>
+                        <div class="card">
+                            <h3>Location</h3>
+                            <p class="muted">Barayong, Magsaysay, Davao del Sur</p>
+                            <p class="muted">Available for internships & part-time projects</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" aria-label="Experience">
+                <div class="section-frame">
+                    <div class="section-title"><h2>Experience</h2></div>
+                    <div class="cards" style="margin-top:16px">
+                        <div class="card">
+                            <h3>PESO IT Assistant (OJT)</h3>
+                            <div class="muted">Oct 2023 - Nov 2024 | PESO Magsaysay</div>
+                            <p class="muted">
+                                • Provided technical support for computer systems, networks, and office equipment<br>
+                                • Assisted in maintaining and troubleshooting hardware and software used in government operations<br>
+                                • Assisted staff in using technology tools to improve efficiency and service delivery
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3>Call Center Agent</h3>
+                            <div class="muted">May 2024 - Jun 2024 | Infinity Digos</div>
+                            <p class="muted">
+                                • Assisted customers with inquiries, complaints, and technical support in a professional and courteous manner<br>
+                                • Utilized active listening and communication skills to ensure accurate issue resolution and customer retention
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" aria-label="Projects">
+    <div class="section-frame">
+        <div class="section-title"><h2>Projects</h2></div>
+        <div class="projects" style="margin-top:18px">
+            <article class="project-tile" aria-labelledby="proj1">
+                <div class="meta">
+                    <div>
+                        <h3 id="proj1">Point of Sales System</h3>
+                        <div class="muted">C# • Mysql</div>
+                    </div>
+                    <div>
+                        <button class="btn" data-project="1" onclick="openModal(1)">Details</button>
+                    </div>
+                </div>
+                <p class="muted" style="margin-top:12px">A C# desktop application with a MySQL database for managing sales, inventory, and customer records efficiently.</p>
+            </article>
+
+            <article class="project-tile" aria-labelledby="proj2">
+                <div class="meta">
+                    <div>
+                        <h3 id="proj2">Jail System</h3>
+                        <div class="muted">C# • Mysql</div>
+                    </div>
+                    <div>
+                        <button class="btn" data-project="2" onclick="openModal(2)">Details</button>
+                    </div>
+                </div>
+                <p class="muted" style="margin-top:12px">A C# application with an MySQL database for efficiently managing inmate records, cases, and jail operations as well as jail cell locations.</p>
+            </article>
+
+            <article class="project-tile" aria-labelledby="proj3">
+                <div class="meta">
+                    <div>
+                        <h3 id="proj3">Snake Game</h3>
+                        <div class="muted">HTML • CSS • JavaScript</div>
+                    </div>
+                    <div>
+                        <a class="btn" href="./snek.html" target="_blank" rel="noopener noreferrer">Play Game</a>
+                    </div>
+                </div>
+                <p class="muted" style="margin-top:12px">Classic Snake game built with vanilla JavaScript. Control the snake to eat food and grow while avoiding walls and yourself!</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+            <section id="lab" aria-label="Laboratory Activities">
+                <div class="section-frame">
+                <div class="section-title"><h2>Laboratory Activities (1–6)</h2></div>
+                <div class="lab-list" style="margin-top:16px">
+                    <div class="lab-item card">
+                        <div class="num">1</div>
+                        <div style="flex:1">
+                            <h4>Activity 1</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act1.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab1')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-item card">
+                        <div class="num">2</div>
+                        <div style="flex:1">
+                            <h4>Activity 2</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act2.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab2')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-item card">
+                        <div class="num">3</div>
+                        <div style="flex:1">
+                            <h4>Activity 3</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act3.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab3')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-item card">
+                        <div class="num">4</div>
+                        <div style="flex:1">
+                            <h4>Activity 4</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act4.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab4')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-item card">
+                        <div class="num">5</div>
+                        <div style="flex:1">
+                            <h4>Activity 5</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act5.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab5')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-item card">
+                        <div class="num">6</div>
+                        <div style="flex:1">
+                            <h4>Activity 6</h4>
+                            <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
+                            <div class="lab-actions">
+                                <a class="btn" href="./act6.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openModal('lab6')">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <section id="contact" aria-label="Contact">
+                <div class="section-frame">
+                <div class="section-title"><h2>Contact</h2></div>
+                <div class="contact-grid" style="margin-top:16px">
+                    <div class="card">
+                        <p class="muted">Have a question or want to collaborate? Send a message and I'll get back to you.</p>
+                        <form id="contactForm" onsubmit="return submitContact(event)">
+                            <label class="muted">Name</label>
+                            <input id="name" type="text" placeholder="Your name">
+                            <label class="muted">Email</label>
+                            <input id="email" type="email" placeholder="you@example.com">
+                            <label class="muted">Message</label>
+                            <textarea id="message" rows="5" placeholder="Short message"></textarea>
+                            <div id="formError" class="error" role="status" aria-live="polite" style="display:none"></div>
+                            <div style="margin-top:12px">
+                                <button class="btn" type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <aside class="card" aria-hidden>
+                        <h3>Quick Info</h3>
+                        <p class="muted">Email: <strong>keithfuentes717@gmail.com</strong></p>
+                        <p class="muted">Location: Digos, Philippines</p>
+                        <p class="muted">Available for internships &amp; part-time projects.</p>
+                    </aside>
+                </div>
+                </div>
+            </section>
+            <footer>
+                <p>Made for IT 634 Midterm — College of Computing, Engineering and Technology</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal markup -->
+    <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="modal" role="document">
+            <h3 id="modalTitle">Project Details</h3>
+            <p id="modalContent" class="muted">Project content will appear here.</p>
+            <div style="margin-top:14px;text-align:right">
+                <button class="btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal-backdrop" role="dialog" aria-hidden="true" aria-labelledby="resumeModalTitle">
+        <div class="modal resume-modal" role="document">
+            <h3 id="resumeModalTitle">My Resume</h3>
+            <div class="resume-image-container">
+                <img src="resume pic.jpg" alt="Keith Fuentes's Resume" id="resumeImage" class="resume-image">
+            </div>
+            <div class="resume-actions">
+                <button class="btn secondary" onclick="zoomOutResume()">Zoom Out</button>
+                <button class="btn" onclick="zoomInResume()">Zoom In</button>
+                <button class="btn" onclick="closeResumeModal()" style="margin-left: auto;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

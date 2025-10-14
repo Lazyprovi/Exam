@@ -166,6 +166,17 @@ function openModal(id){
     modalBackdrop.style.display = 'flex';
     modalBackdrop.setAttribute('aria-hidden','false');
     
+    // Add close button to modal if not already present
+    const modal = modalBackdrop.querySelector('.modal');
+    if (!modal.querySelector('.close-btn')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'close-btn';
+        closeBtn.innerHTML = '×';
+        closeBtn.setAttribute('aria-label', 'Close modal');
+        closeBtn.onclick = closeModal;
+        modal.appendChild(closeBtn);
+    }
+    
     requestAnimationFrame(()=> requestAnimationFrame(()=> modalBackdrop.classList.add('open')));
 }
 
@@ -269,6 +280,13 @@ function closeModal(){
     // remove open class to play reverse animation then hide after transition
     modalBackdrop.classList.remove('open');
     modalBackdrop.setAttribute('aria-hidden','true');
+    
+    // Remove close button
+    const closeBtn = modalBackdrop.querySelector('.close-btn');
+    if (closeBtn) {
+        closeBtn.remove();
+    }
+    
     // wait for CSS transition to complete (match duration in CSS ~260ms)
     setTimeout(()=>{
         modalBackdrop.style.display = 'none';
@@ -490,4 +508,4 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
         closeMobileMenu();
     }
-});
+});m

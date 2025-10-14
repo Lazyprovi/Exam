@@ -890,3 +890,140 @@ header {
     z-index: 998;
 }
 
+/* Mobile Modal Fixes - Safe Version */
+@media (max-width: 700px) {
+    .modal {
+        max-width: 95%;
+        width: 95%;
+        max-height: 85vh;
+        padding: 15px;
+        overflow-y: auto;
+        position: relative;
+    }
+    
+    .modal h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        padding-right: 40px; /* Space for close button */
+    }
+    
+    .modal .gallery {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 8px;
+    }
+    
+    .modal .gallery img {
+        height: auto;
+        min-height: 120px;
+        max-height: 200px;
+        width: 100%;
+        object-fit: contain;
+        cursor: pointer;
+    }
+    
+    /* Keep existing button styles but make them sticky */
+    .modal .btn {
+        position: sticky;
+        bottom: 0;
+        background: var(--panel);
+        padding: 12px 0;
+        margin-top: 15px;
+        z-index: 10;
+    }
+    
+    /* Make sure project buttons still show */
+    .project-tile .btn,
+    .lab-actions .btn {
+        position: static !important;
+        background: rgba(255,255,255,0.06) !important;
+        padding: 8px 12px !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        max-width: 98%;
+        width: 98%;
+        max-height: 90vh;
+        padding: 12px;
+    }
+    
+    .modal h3 {
+        font-size: 1.2rem;
+    }
+    
+    .modal .gallery img {
+        max-height: 150px;
+    }
+}
+
+/* Lightbox mobile fixes */
+@media (max-width: 700px) {
+    .lightbox {
+        padding: 10px;
+    }
+    
+    .lightbox-inner img {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+    
+    .lightbox-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        bottom: auto;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        z-index: 2001;
+    }
+}
+
+/* Add close button to modal - only for modal backdrop */
+.modal-backdrop .modal {
+    position: relative;
+}
+
+.modal-backdrop .modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--muted);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 100;
+}
+
+.modal-backdrop .modal .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .modal-backdrop .modal .close-btn {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+    }
+}

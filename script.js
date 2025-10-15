@@ -508,4 +508,4 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
         closeMobileMenu();
     }
-});m
+});

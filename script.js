@@ -509,3 +509,39 @@ window.addEventListener('resize', () => {
         closeMobileMenu();
     }
 });
+
+// Scroll Animation Functionality
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll(
+        '.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .card, .project-tile, .lab-item'
+    );
+    
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // For staggered animations, observe only once
+                if (entry.target.classList.contains('card') || 
+                    entry.target.classList.contains('project-tile') || 
+                    entry.target.classList.contains('lab-item')) {
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe all animated elements
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Initialize scroll animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimations();
+});

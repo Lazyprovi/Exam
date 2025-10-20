@@ -545,3 +545,162 @@ function initScrollAnimations() {
 document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
 });
+
+// Add this function to your existing JavaScript file
+
+// Activity Modal Functions
+function openActivity(activityUrl) {
+    const activityModal = document.getElementById('activityModal');
+    const activityFrame = document.getElementById('activityFrame');
+    const activityTitle = document.getElementById('activityModalTitle');
+    
+    // Set activity title based on URL
+    const activityNumber = activityUrl.match(/act(\d+)/);
+    if (activityNumber) {
+        activityTitle.textContent = `Activity ${activityNumber[1]}`;
+    } else {
+        activityTitle.textContent = 'Activity';
+    }
+    
+    // Load the activity in the iframe
+    activityFrame.src = activityUrl;
+    
+    // Show the modal
+    activityModal.style.display = 'flex';
+    activityModal.setAttribute('aria-hidden', 'false');
+    
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            activityModal.classList.add('open');
+        });
+    });
+}
+
+function closeActivityModal() {
+    const activityModal = document.getElementById('activityModal');
+    const activityFrame = document.getElementById('activityFrame');
+    
+    // Clear the iframe source
+    activityFrame.src = '';
+    
+    activityModal.classList.remove('open');
+    activityModal.setAttribute('aria-hidden', 'true');
+    
+    setTimeout(() => {
+        activityModal.style.display = 'none';
+    }, 320);
+}
+
+// Close activity modal when clicking backdrop
+document.getElementById('activityModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeActivityModal();
+    }
+});
+
+// Close activity modal with Escape key
+document.addEventListener('keydown', function(e) {
+    const activityModal = document.getElementById('activityModal');
+    if (activityModal.style.display === 'flex' && e.key === 'Escape') {
+        closeActivityModal();
+    }
+});
+
+// Enhanced Activity Modal Functions with better mobile support
+function openActivity(activityUrl) {
+    const activityModal = document.getElementById('activityModal');
+    const activityFrame = document.getElementById('activityFrame');
+    const activityTitle = document.getElementById('activityModalTitle');
+    
+    // Set activity title based on URL
+    const activityNumber = activityUrl.match(/act(\d+)/);
+    if (activityNumber) {
+        activityTitle.textContent = `Activity ${activityNumber[1]}`;
+    } else {
+        activityTitle.textContent = 'Activity';
+    }
+    
+    // Load the activity in the iframe
+    activityFrame.src = activityUrl;
+    
+    // Show the modal
+    activityModal.style.display = 'flex';
+    activityModal.setAttribute('aria-hidden', 'false');
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+    
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            activityModal.classList.add('open');
+        });
+    });
+}
+
+function closeActivityModal() {
+    const activityModal = document.getElementById('activityModal');
+    const activityFrame = document.getElementById('activityFrame');
+    
+    // Clear the iframe source
+    activityFrame.src = '';
+    
+    activityModal.classList.remove('open');
+    activityModal.setAttribute('aria-hidden', 'true');
+    
+    // Re-enable body scrolling
+    document.body.style.overflow = '';
+    
+    setTimeout(() => {
+        activityModal.style.display = 'none';
+    }, 320);
+}
+
+// Enhanced backdrop click handling for mobile
+document.getElementById('activityModal').addEventListener('click', function(e) {
+    // Close if clicking directly on backdrop or very close to edges
+    if (e.target === this || 
+        e.target.classList.contains('modal-backdrop') ||
+        (e.clientY < 50 || e.clientY > window.innerHeight - 50) ||
+        (e.clientX < 50 || e.clientX > window.innerWidth - 50)) {
+        closeActivityModal();
+    }
+});
+
+// Enhanced touch events for mobile
+let touchStartY = 0;
+let touchStartX = 0;
+
+document.getElementById('activityModal').addEventListener('touchstart', function(e) {
+    touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
+});
+
+document.getElementById('activityModal').addEventListener('touchend', function(e) {
+    const touchEndY = e.changedTouches[0].clientY;
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaY = Math.abs(touchEndY - touchStartY);
+    const deltaX = Math.abs(touchEndX - touchStartX);
+    
+    // Close modal on swipe down from top or tap on edges
+    if ((touchStartY < 100 && deltaY > 50) || 
+        (touchStartX < 50 || touchStartX > window.innerWidth - 50) ||
+        (touchStartY < 50 || touchStartY > window.innerHeight - 50)) {
+        closeActivityModal();
+    }
+});
+
+// Close activity modal with Escape key
+document.addEventListener('keydown', function(e) {
+    const activityModal = document.getElementById('activityModal');
+    if (activityModal.style.display === 'flex' && e.key === 'Escape') {
+        closeActivityModal();
+    }
+});
+
+// Close modal when orientation changes (useful for mobile)
+window.addEventListener('orientationchange', function() {
+    const activityModal = document.getElementById('activityModal');
+    if (activityModal.style.display === 'flex') {
+        closeActivityModal();
+    }
+});

@@ -248,7 +248,7 @@
                             <h4>Activity 1</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act1.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act1.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab1')">Details</button>
                             </div>
                         </div>
@@ -260,7 +260,7 @@
                             <h4>Activity 2</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act2.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act2.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab2')">Details</button>
                             </div>
                         </div>
@@ -272,7 +272,7 @@
                             <h4>Activity 3</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act3.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act3.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab3')">Details</button>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                             <h4>Activity 4</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act4.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act4.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab4')">Details</button>
                             </div>
                         </div>
@@ -296,7 +296,7 @@
                             <h4>Activity 5</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act5.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act5.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab5')">Details</button>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                             <h4>Activity 6</h4>
                             <p class="muted">Open the full activity HTML in a new tab to interact with it.</p>
                             <div class="lab-actions">
-                                <a class="btn" href="./act6.html" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                                <button class="btn" onclick="openActivity('act6.html')">Open Activity</button>
                                 <button class="btn" onclick="openModal('lab6')">Details</button>
                             </div>
                         </div>
@@ -377,6 +377,19 @@
                 <button class="btn secondary" onclick="zoomOutResume()">Zoom Out</button>
                 <button class="btn" onclick="zoomInResume()">Zoom In</button>
                 <button class="btn" onclick="closeResumeModal()" style="margin-left: auto;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal -->
+    <div id="activityModal" class="modal-backdrop activity-modal" role="dialog" aria-hidden="true" aria-labelledby="activityModalTitle">
+        <div class="modal activity-modal-content" role="document">
+            <div class="activity-header">
+                <h3 id="activityModalTitle">Activity</h3>
+                <button class="btn activity-close-btn" onclick="closeActivityModal()">Close</button>
+            </div>
+            <div class="activity-frame-container">
+                <iframe id="activityFrame" src="" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
